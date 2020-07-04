@@ -1,0 +1,9 @@
+
+GET    /                     controllers.UserController.getAllUsers(request: play.mvc.Http.Request)
+POST   /                     controllers.UserController.createUser(request: play.mvc.Http.Request)
+
+GET    /:id                 controllers.UserController.getUserById(request: play.mvc.Http.Request,id: String)
+POST    /:id                controllers.UserController.updateUser(request: play.mvc.Http.Request, id: String)
+
+GET    /getAllUserFromGroup/:id      controllers.UserController.getAllUserFromGroup(request: play.mvc.Http.Request, id: String)
+POST   /addUserToGroup/:userId/:groupId/:id    controllers.UserController.addUserToGroup(request: play.mvc.Http.Request, userId: String, groupId: String, id: String)

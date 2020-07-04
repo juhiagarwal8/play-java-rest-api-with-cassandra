@@ -1,0 +1,72 @@
+<!-- https://www.playframework.com/documentation/latest/SettingsLogger -->
+<configuration>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+	<Loggers>
+		<Root level="error">
+			<AppenderRef ref="Console" />
+		</Root>
+	</Loggers>
+
+	<conversionRule conversionWord="coloredLevel"
+		converterClass="play.api.libs.logback.ColoredLevel" />
+
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${application.home:-.}/logs/application.log</file>
+		<encoder>
+			<pattern>%date [%level] from %logger in %thread -
+				%message%n%xException</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>INFO</level>
+		</filter>
+		<encoder>
+			<pattern>[%date{ISO8601}] [%level] %logger{36}:%line [%marker]
+				[%thread] [%mdc{reqId}] - %msg %n
+			</pattern>
+			<!--to print whole Mapped Diagnostic Context (MDC) properties( for eg: 
+				the actor’s path, the full address of the ActorSystem) in the logs refer 
+				this link https://doc.akka.io/docs/akka/current/typed/logging.html#mdc -->
+			<!--[%mdc] will print all akka variables akkaSource, akkaAddress, akkaTags, 
+				sourceActorSystem. for more info refer this link https://doc.akka.io/docs/akka/current/typed/logging.html#mdc-values -->
+		</encoder>
+	</appender>
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%coloredLevel %logger{15} - %message%n%xException{10}
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="ASYNCFILE"
+		class="ch.qos.logback.classic.AsyncAppender">
+		<appender-ref ref="FILE" />
+	</appender>
+
+	<appender name="ASYNCSTDOUT"
+		class="ch.qos.logback.classic.AsyncAppender">
+		<appender-ref ref="STDOUT" />
+	</appender>
+
+	<logger name="play" level="INFO" />
+	<logger name="application" level="DEBUG" />
+
+	<logger name="akka" level="INFO" />
+	<logger name="akka" level="INFO" />
+
+
+	<root level="INFO">
+		<appender-ref ref="ASYNCFILE" />
+		<appender-ref ref="ASYNCSTDOUT" />
+	</root>
+
+</configuration>

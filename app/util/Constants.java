@@ -1,0 +1,71 @@
+package util;
+
+public interface Constants {
+
+	public static final String USER_ID = "userId";
+	public static final String IDENTIFIER = "id";
+	public static final String SUCCESS = "SUCCESS";
+	public static final String RESPONSE = "response";
+	public static final String QUE_MARK = "?";
+	public static final String INSERT_INTO = "INSERT INTO ";
+	public static final String OPEN_BRACE_WITH_SPACE = " (";
+	public static final String DOT = ".";
+	public static final String VALUES_WITH_BRACE = ") VALUES (";
+	public static final String COMMA_WITH_SPACE = ", ";
+	public static final String CLOSING_BRACE = ");";
+	public static final String OPEN_BRACE = "(";
+	public static final String COMMA = ",";
+	public static final String COMMA_BRAC = "),";
+	public static final String UPDATE = "UPDATE ";
+	public static final String SET = " SET ";
+	public static final String WHERE = " where ";
+	public static final String SELECT = "SELECT ";
+	public static final String FROM = " FROM ";
+	public static final String INCORRECT_DATA = "Incorrect Data";
+	public static final String EQUAL = " = ";
+	public static final String WHERE_ID = "where id";
+	public static final String EQUAL_WITH_QUE_MARK = " = ? ";
+	public static final String SEMICOLON = ";";
+	public static final String IF_EXISTS = " IF EXISTS;";
+	public static final String ALREADY_EXIST = "Record with this primary key already exist.";
+	public static final String IF_NOT_EXISTS = " IF NOT EXISTS;";
+	public static final String EXCEPTION_MSG_FETCH = "Exception occurred while fetching record from ";
+	public static final String EXCEPTION_MSG_UPSERT = "Exception occured while upserting record from ";
+	public static final String EXCEPTION_MSG_DELETE = "Exception occurred while deleting record from ";
+	public static final String EXCEPTION_MSG_UPDATE = "Exception occurred while updating record to ";
+	public static final String LTE = "<=";
+	public static final String LT = "<";
+	public static final String GTE = ">=";
+	public static final String GT = ">";
+	public static final String ID = "id";
+
+	public static final String UNKNOWN_IDENTIFIER = "Unknown identifier ";
+	public static final String UNDEFINED_IDENTIFIER = "Undefined column name ";
+	public static final String PRIMARY_KEY = "PK";
+	public static final String NON_PRIMARY_KEY = "NonPK";
+	public static final String OBJECT_TYPE = "objectType";
+	public static final String INSERT = "insert";
+	public static final String STANDALONE_MODE = "standalone";
+
+	public static final String USER_GROUP = "user_group";
+	public static final String TABLENAME = "user";
+	public static final String USERID = "userid";
+	public static final String KEYSPACE = "sample";
+	public static final String GET_RECORD_BY_IDENTIFIER = "getRecordByIdentifier";
+	public static final String STRING = "';";
+	public static final String WHERE_ID_ = " where id='";
+	public static final String SELECT_FROM = "select * from ";
+	public static final String CASSANDRA_SERVICE_UPSERT_RECORD_METHOD_STARTED_AT = "Cassandra Service upsertRecord method started at == {}";
+	public static final String UPSERT_RECORD = "upsertRecord";
+	public static final String LOCALHOST = "localhost";
+	public static final String GET_ALL_RECORDS = "getAllRecords";
+	public static final String PHONE = "phone";
+	public static final String EMAIL = "email";
+	public static final String NAME = "name";
+	public static final String PASSWORD = "password";
+	public static final String USERNAME = "username";
+	public static final String EXCEPTION_OCCURED_WHILE_INSERTING_RECORD_TO = "Exception occured while inserting record to ";
+	public static final String INSERT_INTO_ = "insert into sample.user_group (\"id\",\"userid\",\"groupid\") values(";
+	public static final String ALLOW_FILTERING = " ALLOW FILTERING;";
+	public static final String SELECT_FROM_SAMPLE_USER_GROUP_WHERE_GROUPID = "select * from sample.user_group where groupid=";
+}

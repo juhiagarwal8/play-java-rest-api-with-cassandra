@@ -1,0 +1,123 @@
+2020-07-04 20:38:36,278 [ERROR] from play.api.http.DefaultHttpErrorHandler in play-dev-mode-akka.actor.default-dispatcher-10 -
+				
+
+! @7gbf18dmj - Internal server error, for (GET) [/v1/users?id=2] ->
+ 
+play.api.PlayException: Cannot load module[Module [utils.Module] cannot be instantiated.]
+	at play.api.inject.Modules$.constructModule(Module.scala:180)
+	at play.api.inject.Modules$.$anonfun$locate$4(Module.scala:138)
+	at scala.collection.StrictOptimizedIterableOps.map(StrictOptimizedIterableOps.scala:100)
+	at scala.collection.StrictOptimizedIterableOps.map$(StrictOptimizedIterableOps.scala:87)
+	at scala.collection.immutable.HashSet.map(HashSet.scala:34)
+	at play.api.inject.Modules$.locate(Module.scala:133)
+	at play.api.inject.guice.GuiceableModule$.loadModules(GuiceInjectorBuilder.scala:299)
+	at play.api.inject.guice.GuiceApplicationBuilder$.$anonfun$$lessinit$greater$default$9$1(GuiceApplicationBuilder.scala:36)
+	at play.api.inject.guice.GuiceApplicationBuilder.applicationModule(GuiceApplicationBuilder.scala:114)
+	at play.api.inject.guice.GuiceBuilder.injector(GuiceInjectorBuilder.scala:200)
+	at play.api.inject.guice.GuiceApplicationBuilder.build(GuiceApplicationBuilder.scala:155)
+	at play.api.inject.guice.GuiceApplicationLoader.load(GuiceApplicationLoader.scala:21)
+	at play.core.server.DevServerStart$$anon$1.$anonfun$reload$3(DevServerStart.scala:190)
+	at play.utils.Threads$.withContextClassLoader(Threads.scala:22)
+	at play.core.server.DevServerStart$$anon$1.reload(DevServerStart.scala:182)
+	at play.core.server.DevServerStart$$anon$1.get(DevServerStart.scala:142)
+	at play.core.server.AkkaHttpServer.handleRequest(AkkaHttpServer.scala:301)
+	at play.core.server.AkkaHttpServer.$anonfun$createServerBinding$1(AkkaHttpServer.scala:191)
+	at akka.stream.impl.fusing.MapAsync$$anon$30.onPush(Ops.scala:1285)
+	at akka.stream.impl.fusing.GraphInterpreter.processPush(GraphInterpreter.scala:541)
+	at akka.stream.impl.fusing.GraphInterpreter.execute(GraphInterpreter.scala:423)
+	at akka.stream.impl.fusing.GraphInterpreterShell.runBatch(ActorGraphInterpreter.scala:625)
+	at akka.stream.impl.fusing.GraphInterpreterShell$AsyncInput.execute(ActorGraphInterpreter.scala:502)
+	at akka.stream.impl.fusing.GraphInterpreterShell.processEvent(ActorGraphInterpreter.scala:600)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.akka$stream$impl$fusing$ActorGraphInterpreter$$processEvent(ActorGraphInterpreter.scala:769)
+	at akka.stream.impl.fusing.ActorGraphInterpreter$$anonfun$receive$1.applyOrElse(ActorGraphInterpreter.scala:784)
+	at akka.actor.Actor.aroundReceive(Actor.scala:535)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:533)
+	at akka.stream.impl.fusing.ActorGraphInterpreter.aroundReceive(ActorGraphInterpreter.scala:691)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:575)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:545)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:270)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:231)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:243)
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:289)
+	at java.util.concurrent.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1056)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1692)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+Caused by: java.lang.ClassNotFoundException: utils.Module
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at play.api.inject.Modules$.$anonfun$locate$5(Module.scala:138)
+	at play.api.inject.Modules$.constructModule(Module.scala:150)
+	... 37 common frames omitted
+2020-07-04 20:40:05,293 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-12 -
+				Database [default] initialized
+2020-07-04 20:40:05,321 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-12 -
+				Creating Pool for datasource 'default'
+2020-07-04 20:40:05,359 [INFO] from com.zaxxer.hikari.HikariDataSource in play-dev-mode-akka.actor.default-dispatcher-12 -
+				HikariPool-1 - Starting...
+2020-07-04 20:40:05,405 [INFO] from com.zaxxer.hikari.HikariDataSource in play-dev-mode-akka.actor.default-dispatcher-12 -
+				HikariPool-1 - Start completed.
+2020-07-04 20:40:05,438 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-12 -
+				datasource [default] bound to JNDI as DefaultDS
+2020-07-04 20:40:05,493 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 -
+				Slf4jLogger started
+2020-07-04 20:40:05,870 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-12 -
+				Application started (Dev) (no global state)
+2020-07-04 20:40:06,325 [INFO] from util.CassandraOperationImpl in application-akka.actor.default-dispatcher-6 -
+				Cassandra Service getAllRecords method started at == 1593875406325
+2020-07-04 20:40:06,350 [INFO] from com.datastax.driver.core in application-akka.actor.default-dispatcher-6 -
+				DataStax Java driver 3.7.0 for Apache Cassandra
+2020-07-04 20:40:06,367 [INFO] from com.datastax.driver.core.GuavaCompatibility in application-akka.actor.default-dispatcher-6 -
+				Detected Guava >= 19 in the classpath, using modern compatibility layer
+2020-07-04 20:40:06,869 [INFO] from com.datastax.driver.core.Native in application-akka.actor.default-dispatcher-6 -
+				Could not load JNR C Library, native system calls through this library will not be available (set this logger level to DEBUG to see the full stack trace).
+2020-07-04 20:40:06,869 [INFO] from com.datastax.driver.core.ClockFactory in application-akka.actor.default-dispatcher-6 -
+				Using java.lang.System clock to generate timestamps.
+2020-07-04 20:40:07,145 [INFO] from com.datastax.driver.core.NettyUtil in application-akka.actor.default-dispatcher-6 -
+				Did not find Netty's native epoll transport in the classpath, defaulting to NIO.
+2020-07-04 20:40:08,050 [WARN] from com.datastax.driver.core.Cluster in application-akka.actor.default-dispatcher-6 -
+				You listed localhost/0:0:0:0:0:0:0:1:9042 in your contact points, but it wasn't found in the control host's system.peers at startup
+2020-07-04 20:40:08,274 [INFO] from com.datastax.driver.core.policies.DCAwareRoundRobinPolicy in application-akka.actor.default-dispatcher-6 -
+				Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+2020-07-04 20:40:08,278 [INFO] from com.datastax.driver.core.Cluster in application-akka.actor.default-dispatcher-6 -
+				New Cassandra host localhost/127.0.0.1:9042 added
+2020-07-04 20:42:03,422 [INFO] from util.CassandraOperationImpl in application-akka.actor.default-dispatcher-10 -
+				Cassandra Service getAllRecords method started at == 1593875523422
+2020-07-04 20:42:03,424 [INFO] from com.datastax.driver.core.ClockFactory in application-akka.actor.default-dispatcher-10 -
+				Using java.lang.System clock to generate timestamps.
+2020-07-04 20:42:05,671 [WARN] from com.datastax.driver.core.Cluster in application-akka.actor.default-dispatcher-10 -
+				You listed localhost/0:0:0:0:0:0:0:1:9042 in your contact points, but it wasn't found in the control host's system.peers at startup
+2020-07-04 20:42:05,775 [INFO] from com.datastax.driver.core.policies.DCAwareRoundRobinPolicy in application-akka.actor.default-dispatcher-10 -
+				Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+2020-07-04 20:42:05,776 [INFO] from com.datastax.driver.core.Cluster in application-akka.actor.default-dispatcher-10 -
+				New Cassandra host localhost/127.0.0.1:9042 added
+2020-07-04 20:50:29,942 [INFO] from play.api.db.HikariCPConnectionPool in application-akka.actor.internal-dispatcher-14 -
+				Shutting down connection pool.
+2020-07-04 20:50:29,946 [INFO] from com.zaxxer.hikari.HikariDataSource in application-akka.actor.internal-dispatcher-14 -
+				HikariPool-1 - Shutdown initiated...
+2020-07-04 20:50:29,959 [INFO] from com.zaxxer.hikari.HikariDataSource in application-akka.actor.internal-dispatcher-14 -
+				HikariPool-1 - Shutdown completed.
+2020-07-04 20:50:31,130 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-akka.actor.default-dispatcher-35 -
+				Database [default] initialized
+2020-07-04 20:50:31,135 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-35 -
+				Creating Pool for datasource 'default'
+2020-07-04 20:50:31,136 [INFO] from com.zaxxer.hikari.HikariDataSource in play-dev-mode-akka.actor.default-dispatcher-35 -
+				HikariPool-2 - Starting...
+2020-07-04 20:50:31,137 [INFO] from com.zaxxer.hikari.HikariDataSource in play-dev-mode-akka.actor.default-dispatcher-35 -
+				HikariPool-2 - Start completed.
+2020-07-04 20:50:31,159 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-akka.actor.default-dispatcher-35 -
+				datasource [default] bound to JNDI as DefaultDS
+2020-07-04 20:50:31,259 [INFO] from akka.event.slf4j.Slf4jLogger in application-akka.actor.default-dispatcher-6 -
+				Slf4jLogger started
+2020-07-04 20:50:31,526 [INFO] from play.api.Play in play-dev-mode-akka.actor.default-dispatcher-35 -
+				Application started (Dev) (no global state)
+2020-07-04 20:50:31,622 [INFO] from util.CassandraOperationImpl in application-akka.actor.default-dispatcher-6 -
+				Cassandra Service getAllRecords method started at == 1593876031621
+2020-07-04 20:50:31,632 [INFO] from com.datastax.driver.core.ClockFactory in application-akka.actor.default-dispatcher-6 -
+				Using java.lang.System clock to generate timestamps.
+2020-07-04 20:50:34,197 [WARN] from com.datastax.driver.core.Cluster in application-akka.actor.default-dispatcher-6 -
+				You listed localhost/0:0:0:0:0:0:0:1:9042 in your contact points, but it wasn't found in the control host's system.peers at startup
+2020-07-04 20:50:34,379 [INFO] from com.datastax.driver.core.policies.DCAwareRoundRobinPolicy in application-akka.actor.default-dispatcher-6 -
+				Using data-center name 'datacenter1' for DCAwareRoundRobinPolicy (if this is incorrect, please provide the correct datacenter name with DCAwareRoundRobinPolicy constructor)
+2020-07-04 20:50:34,380 [INFO] from com.datastax.driver.core.Cluster in application-akka.actor.default-dispatcher-6 -
+				New Cassandra host localhost/127.0.0.1:9042 added
